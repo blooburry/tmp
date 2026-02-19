@@ -1,0 +1,155 @@
+:root {
+    --orange-main: #f97316;
+    --orange-soft: #fff7ed;
+    --orange-dark: #c2410c;
+    --text-main: #1f2933;
+    --text-muted: #6b7280;
+    --card-bg: #ffffff;
+    --border-soft: #e5e7eb;
+}
+
+/* Page container */
+
+.orange-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem 2.5rem 2rem;
+    color: var(--text-main);
+    font-family: 'DM Sans';
+}
+
+h1, h2 {
+    font-family: 'Raleway';
+}
+
+/* Header */
+
+.page-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--orange-main);
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.page-header .subtitle {
+    margin-top: 0.25rem;
+    color: var(--text-muted);
+}
+
+/* Cards */
+
+.card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    border: 1px solid var(--border-soft);
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.card-hint {
+    margin: 0 0 0.75rem 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Form section */
+
+.form-card {
+    background: linear-gradient(
+        0deg,
+        var(--card-bg),
+        var(--orange-soft)
+    );
+    border-left: 6px solid var(--orange-main);
+    margin-bottom: 1.5rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 280px 220px auto;
+    gap: 1rem 1.25rem;
+    align-items: end;
+}
+
+.form-field label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.form-actions {
+    align-self: end;
+}
+
+/* Make the Panel button stand out slightly */
+.form-actions button,
+.form-actions .bk-btn {
+    background-color: var(--orange-main) !important;
+    border-color: var(--orange-main) !important;
+    color: white !important;
+}
+
+.form-actions button:hover,
+.form-actions .bk-btn:hover {
+    background-color: var(--orange-dark) !important;
+    border-color: var(--orange-dark) !important;
+}
+
+/* Outputs grid */
+
+.outputs-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1.5rem;
+
+    /* This guarantees visual alignment of chart and table cards */
+    align-items: stretch;
+}
+
+/* Chart and table wrappers */
+
+.chart-wrapper,
+.table-wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+
+    display: flex;
+}
+
+/*
+Allow the embedded Panel/Bokeh elements
+to expand to the full card width.
+*/
+.chart-wrapper > *,
+.table-wrapper > * {
+    flex: 1 1 auto;
+    width: 100% !important;
+}
+
+/* Small screens */
+
+@media (max-width: 1000px) {
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .outputs-grid {
+        grid-template-columns: 1fr;
+    }
+}

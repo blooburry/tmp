@@ -1,0 +1,65 @@
+{% extends base %}
+
+{%   block css_resources -%}
+<link rel="stylesheet" href="/assets/orange-production.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Raleway:wght@400&display=swap"/>
+{% endblock %}
+
+{% block contents %}
+
+<div class="orange-page">
+
+    <header class="page-header">
+        <h1>Orange production</h1>
+        <p class="subtitle">
+            Track and record orange production over time.
+        </p>
+    </header>
+
+    <section class="card form-card">
+        <h2>Add new record</h2>
+
+        <div class="form-grid">
+            <div class="form-field">
+                <label>Timestamp</label>
+                {{ embed(roots.timestamp_input) }}
+            </div>
+
+            <div class="form-field">
+                <label>Oranges produced</label>
+                {{ embed(roots.amount_input) }}
+            </div>
+
+            <div class="form-actions">
+                {{ embed(roots.add_button) }}
+            </div>
+        </div>
+    </section>
+
+    <section class="outputs-grid">
+
+        <div class="card chart-card">
+            <h2>Total production</h2>
+            <p class="card-hint">
+                Cumulative number of oranges produced over time.
+            </p>
+            <div class="chart-wrapper">
+                {{ embed(roots.production_chart) }}
+            </div>
+        </div>
+
+        <div class="card table-card">
+            <h2>Production records</h2>
+            <p class="card-hint">
+                Breakdown of production per timestamp.
+            </p>
+            <div class="table-wrapper">
+                {{ embed(roots.production_table) }}
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+{% endblock %}

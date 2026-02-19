@@ -1,0 +1,17 @@
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project]
+name = "panel-example"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "jinja2>=3.1.6",
+    "panel>=1.8.7",
+    "param>=2.3.2",
+]
