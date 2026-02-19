@@ -95,6 +95,34 @@ h1, h2 {
     align-self: end;
 }
 
+.form-feedback {
+    margin-top: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.25s, color 0.25s;
+    min-height: 2em; /* keeps box from collapsing when empty */
+}
+
+/* Success messages (green background) */
+.form-feedback .bk-panel-models-markup-HTML.success {
+    background-color: #dcfce7; /* light green */
+    color: #166534; /* dark green text */
+    border: 1px solid #4ade80;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+}
+
+/* Error messages (red background) */
+.form-feedback .bk-panel-models-markup-HTML.error {
+    background-color: #fee2e2; /* light red */
+    color: #991b1b; /* dark red text */
+    border: 1px solid #f87171;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+}
+
 /* Make the Panel button stand out slightly */
 .form-actions button,
 .form-actions .bk-btn {
